@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<title>Заголовок страницы</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="http://localhost/test.ru/css/style.css">
+</head>
+
+<body>
+
+<style type="text/css">
+	svg{
+		background-color: #ddd;
+	}
+
+</style>
+
+<!-- 
+
+line		прямая линия
+polyline	ломанная линия
+polygon		многоугольник
+rect		прямоугольник
+circle		круг
+ellipse		эллипс
+path		сложная траектория
+ 
+
+stroke				Цвет линии
+stroke-width		Толщина линии
+stroke-linecap		Стиль концов линии. 
+						Возможные значения атрибута:
+						round	по форме круга;
+						square	по форме квадрата.
+stroke-dasharray	Чередование штрихов и пробелов в пунктирной линии
+stroke-dashoffset	Сдвиг пунктира
+fill				Цвет заливки (none – без заливки)
+fill-opacity		Прозрачность заливки (от 0 до 1)
+fill-rule			Правило заливки. 
+						Возможные значения атрибута:
+							nonzero	сплошная заливка;
+							evenodd	внутренняя часть фигуры не заливается.
+-->
+Line:<br>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="70">
+    <line x1="5" y1="5" x2="500" y2="60" stroke="#b4241b" stroke-width="5" />   <!-- прямая линия две координаты. -->
+</svg>	<br>
+
+Polyline:<br>
+<svg class="polyline" xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="70">
+    <polyline points="0,0 20,20 150,30 150,15 295,35 295,50 440,50 440,65" stroke="#b4241b" stroke-width="3" fill="none" />     
+    	<!-- ломаная линия, координаты задаются парами через пробел    x1,y1 x2,y2 x3,y3 .... -->
+</svg>	<br>
+
+polygon:<br>
+<svg class="polyline" xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="120">
+	<a href="3_table.php" cursor="pointer">
+		<polygon points="10,10 110,10 110,110 10,110 10,60 60,10 110,60 60,110 10,60" stroke="#05d" stroke-width="3" fill="#0df" fill-rule="nonzero" />
+	</a>
+
+	<a href="3_table.php" cursor="pointer">
+		<polygon points="210,10 310,10 310,110 210,110 210,60 260,10 310,60 260,110 210,60" stroke="#05d" stroke-width="3" fill="#0df" fill-rule="evenodd" />
+	</a>
+</svg>	<br>
+
+Rect:<br>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="70">
+    <rect x="5" y="5" width="500" height="50" rx="10" ry="20" stroke="#05d" stroke-width="3" fill="#0df" />
+    <!-- rx - радиус закругления по оси X -->
+</svg>	<br>
+
+Circle:<br>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="70">
+    <circle cx="35" cy="35" r="30" stroke="#05d" stroke-width="3" fill="#0df" />
+</svg>	<br>
+
+Ellipse:<br>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="70">
+    <ellipse cx="80" cy="35" rx="70" ry="30" stroke="#05d" stroke-width="3" fill="#0df" />
+</svg>	<br>
+
+Path:<br>
+<!-- 
+Форма фигуры задается атрибутом d, значение которого – это набор специальных команд. Эти команды могут быть и в верхнем, и в нижнем регистре. Верхний регистр указывает на то, что применяется абсолютное позиционирование, а нижний – относительное.
+M, m	Начальная точка	Mx,y
+L, l	Отрезок прямой	Lx,y
+H, h	Горизонтальная линия	Hx,y или hx
+V, v	Вертикальная линия	Vx,y или vy
+A, a	Дуга эллипса	Arx,ry x-axis-rotation large-arc-flag,sweep-flag x,y
+		rx,ry – радиусы дуги эллипса;
+		x-axis-rotation – угол поворота дуги относительно оси X;
+		large-arc-flag – если (=1), то строится большая части дуги, если (=0) – меньшая;
+		sweep-flag – если (=1), то дуга строится по часовой стрелке, если (=0) – против часовой стрелке;
+		x,y – координаты конечной точки дуги.
+C, c	Кубическая кривая Безье	Cx1,y1 x2,y2 x,y
+		x1,y1 – координаты первой контрольной точки;
+		x2,y2 – координаты второй контрольной точки;
+		x,y – координаты конечной точки кривой.
+S, s	Гладкая кубическая кривая Безье		Sx2,y2 x,y
+		x2,y2 – координаты второй контрольной точки;
+		x,y – координаты конечной точки кривой.
+		Первая контрольная точка является зеркальным отражением второй контрольной точки.
+Q, q	Квадратичная кривая Безье	Qx1,y1 x,y
+		x1,y1 – координаты контрольной точки;
+		x,y – координаты конечной точки кривой.
+T, t	Гладкая квадратичная кривая Безье	Тx1,y1 x,y
+		x,y – координаты конечной точки кривой.
+		Контрольная точка этой команды является зеркальным отражением контрольной точки предыдущей команды.
+Z, z	Замыкание траектории -->
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="100">
+    <path d="M10,15 h50 v60 L110,55 A25,35 -30 0,1 150,30
+        M160,50 C160,110 260,110 260,50 S360,-10 360,50
+        M370,50 Q420,100 470,50 T570,50 z"
+        stroke="#05d" stroke-width="3" fill="none" />
+</svg>
+
+
+
+
+
+
+
+</body>
+</html>
+

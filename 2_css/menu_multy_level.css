@@ -1,0 +1,39 @@
+ul {
+	list-style: none;
+}
+ul a {
+	display:block;
+	text-decoration: none;
+	background-color: #dfdfdf;
+	padding: 5px;
+}
+ul ul{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#fff;
+	padding:0
+}
+ul li{
+	position:relative;
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+ul li:hover > ul {
+	display:block
+}
+ ul ul li {
+	float: none;
+	width:200px
+}
+ul ul ul {
+	top:0;
+	left:100%
+}
+
+
+li a:hover {
+	background-color: #ededed;
+}

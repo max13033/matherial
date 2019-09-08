@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>Заголовок страницы</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="http://localhost/test.ru/css/style.css">
+</head>
+
+<body>
+
+<style type="text/css">
+.ddd{
+	border: 1px solid black;
+}
+
+
+</style>
+
+<?
+
+
+?>
+<img class="ddd" usemap="#test" src="auto.jpg"> 
+<map name = "test">
+	<area title="Стёкла" shape="poly" coords="75, 110, 80, 78, 113, 72, 206, 72, 240, 95, 187, 96" href = "glass.php">
+	<area title="Кузов" shape="poly" coords="60, 100, 130, 110, 125, 185, 70, 160" href = "body.php">
+	<area title="Колёса" shape="circle" coords="166, 189, 40"  href="wheels.php">
+</map>
+
+<map>
+	<area title="rect" shape="rect" coords="20, 30, 100, 120"  href="rect.php">     <!-- координаты  x1, y1, x2, y2 -->
+	<area title="poly" shape="poly" coords="20, 30, 100, 120"  href="poly.php">		<!-- координаты  x1, y1, x2, y2, x3, y3, x4, y4...... -->
+	<area title="circle" shape="circle" coords="200, 300, 100"  href="circle.php">	<!-- координаты x, y, R -->
+</map>
+
+
+
+
+
+
+</body>
+</html>
+
