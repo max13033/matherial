@@ -56,6 +56,20 @@ function(x) {
 	return x * arguments.callee(x - 1);
 }
 
+//  функции-стрелки:
+// была простая анонимная функция 
+var inc = function (x) { return x+1; } 
+
+// стала запись в одну строчку 
+var inc = x => x+1;
+
+// была функция с несколькими аргументами 
+var sum = function (a, b) { return a+b; } 
+
+// стала запись в одну строчку 
+var sum = (a, b) => a+b;
+
+
 //												=============	Использование свойств объекта в качестве аргументов		=======================
 function easycopy(args) {
 	arraycopy(args.from,

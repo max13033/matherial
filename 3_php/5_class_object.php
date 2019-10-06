@@ -311,6 +311,18 @@ class OtherClass extends MyClass {
 
 $class = new OtherClass();
 $class->myFunc();
+
+// Клонирование объектов
+
+$first = new Point;
+$first->x = 3;
+$first->y = 3;
+$second = clone $first;
+$second->x = 5;
+$second->y = 5;
+echo "х: {$first->x), у: {$first->y)"; // х: 3, у: 3
+
+
 ?>
 
 

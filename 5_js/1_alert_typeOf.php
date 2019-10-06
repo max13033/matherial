@@ -21,6 +21,38 @@
 		document.write(i + "! = " + fact + "<br>");
 	}
 
+// Объявлять переменные можно через var или let;
+
+// Внешне, от «var» не сильно отличается, зато какая разница в поведении: — область видимости переменной «let» ограничена блоком {...}, в отличии от «var», которая видна везде внутри функции:
+
+var a = 0; if (true) { var a = 1000; alert(a); // 1000 } alert(a); // 1000
+
+А теперь сравните с поведением «let»:
+
+let a = 0; if (true) { let a = 1000; alert(a); // 1000 } alert(a); // 0
+
+— переменная «let» видна только после объявления:
+		alert(a); // undefined var a = 0;
+		alert(b); // error: 'b' is not defined let b = 0;
+
+— переменную «let» нельзя объявить повторно:
+		var a; var a; // ок
+		let b; let b; // error: 'b' has already been declared
+
+— внутри цикла переменная «let» будет объявлена новая для каждой итерации:
+		for (var i = 0; i < 10; i++) { /* … */ } alert(i); // 10
+		for (let j = 0; j < 10; j++) { /* … */ } alert(j); // error: 'j' is not defined
+
+
+//  В JavaScript'е до ES-2015 не было констант, но поскольку необходимость в них всё же была и до того, то была неглассная договорённость: переменные, набранные в верхнем регистре через подчёркивание, не изменять:
+
+var USER_STATUS_ACTIVE = 1; 
+var USER_STATUS_BANNED = 2;
+// по новым стандартам:
+
+const USER_STATUS_ACTIVE = 1; 
+USER_STATUS_ACTIVE = 2; // error: assignment to constant variable
+
 
 Типы данных:
 
