@@ -45,10 +45,36 @@ $("#my").css('height', function(i, value){
 })
 
 
+//  манипуляции с классами, тоже из разряда первичных навыков:
+addClass(className) — добавление класса элементу 
+addClass(function(index, currentClass){ return className }) — добавление класса используя функцию обратного вызова
+hasClass(className) — проверка на причастность к определённому классу
+removeClass(className) — удаление класса 
+removeClass(function(index, currentClass){ return className }) — удаление класса используя функцию обратного вызова
+toggleClass(className) — переключение класса toggleClass(className, switch) — переключение класса по флагу switch 
+toggleClass(function(index, currentClass, switch){ 
+    return className }, switch) — переключение класса используя функцию обратного вызова
+
+//  В приведённых методах в качестве «className» может быть строка содержащая список классов через пробел.
 
 
+HTML код:
+//  <!-- В данном примере это href, title, class --> 
+//  <a href="#top" title="anchor" class="simple">To Top</a>  
+//  Атрибуты, с которыми вам чаще других придётся сталкиваться:
+// получение альтернативного текста картинки 
+    var altText = $('img').attr('alt')
 
+// изменение адреса картинки 
+    $('img').attr('src', '/images/default.png')
 
+// работаем со ссылками 
+$('a#my').attr({ 'href':'http://anton.shevchuk.name', 'title':'My Personal Blog', });
+
+//  Кроме атрибутов, также есть свойства элементов, к ним относится «selectedIndex», «tagName», «nodeName», «nodeType», «ownerDocument», «defaultChecked» и «defaultSelected». Ну вроде бы список невелик, можно и запомнить. Для работы со свойствами используем методы из семейства «.prop()»:
+prop(propName) — получение значения свойства 
+prop(propName, propValue) — установка значения свойства (также можно использовать hash, либо функцию обратного вызова) 
+removeProp(propName) — удаление свойства (скорей всего никогда не понадобится)
 
 
 
