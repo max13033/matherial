@@ -35,9 +35,6 @@ if($res){
 	$marr[] = $res->fetch_array(MYSQLI_ASSOC);
 	
 }
-foreach ($marr as $key => $value) {
-	echo "key ".$key."val ".$value."<br>";
-}
 
 // Функция in_array() осуществляет поиск значения в массиве и имеет следующий
 // синтаксис:
@@ -72,9 +69,9 @@ mixed array_search(mixed $value, array $arr[, Ьооl $strict = false])
 //	элемента массива с $value будет использоваться оператор эквивалентности ===,
 //	в противном случае будет использован оператор равенства ==. 
 
-$array = [О => 'Ыuе', 1 => 'red', 2 => 'green', 3 => 'red'J;
-$key array_search('green', $array); // $key 2;
-$key array_search( 'red', $array) ; // $key 1;
+$array = [0 => 'Ыuе', 1 => 'red', 2 => 'green', 3 => 'red'J;
+$key = array_search('green', $array); // $key = 2;
+$key = array_search( 'red', $array) ; // $key = 1;
 
 
 
