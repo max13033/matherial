@@ -34,6 +34,8 @@ tar -xvf archive.tar -C /home/public_html/videos/
 //	Запустить цикл создания архивов из всех файлов/папок в данной директории
 for i in *; do tar -cvf /path/to/archive/$i.tar $i; done
 
+//	Запустить tar из cron
+* * * * * cd /work/directory/; for i in *; do tar -cf $i.tar $i; done > /path/to/log.txt 2>&1	
 
 
 
