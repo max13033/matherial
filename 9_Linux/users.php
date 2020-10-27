@@ -34,7 +34,6 @@ man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
 lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
 mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
 news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
-maxdie:x:1000:1000:Max Die,,,:/home/helder:/bin/bash
 davmail:x:127:65534::/var/lib/davmail:/usr/sbin/nologin
 statd:x:128:65534::/var/lib/nfs:/usr/sbin/nologin
 
