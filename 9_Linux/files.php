@@ -37,8 +37,8 @@ for i in *; do tar -cvf /path/to/archive/$i.tar $i; done
 //	Запустить tar из cron
 * * * * * cd /work/directory/; for i in *; do tar -cf $i.tar $i; done > /path/to/log.txt 2>&1	
 
-
-
+find . -type f -exec chmod 664 {} ';'	//	изменить у всех файлов в текущей директории права на 664
+find . -type d -exec chmod 755 {} ';'	//	изменить у всех директорий в текущей директории права на 755
 
 
 
